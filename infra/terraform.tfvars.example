@@ -1,0 +1,32 @@
+# 复制为 terraform.tfvars 并按需修改：
+#   cp terraform.tfvars.example terraform.tfvars
+#
+# 注意：terraform.tfvars 含密码与密钥，已被 .gitignore 排除，切勿提交。
+
+region        = "cn-north-4"
+project_name  = "serverlesspresso"
+environment   = "dev"
+
+# OBS 桶名（全局唯一，建议加短随机后缀，如 slpresso-assets-dev-a1b2）
+obs_bucket_name = "slpresso-assets-dev-change-me"
+
+# DCS Redis 密码（8-32 位，字母+数字+特殊字符）
+dcs_password = "ChangeMe-123456"
+
+# 自建 JWT 签名密钥（测试账号临时值，勿提交 git）
+auth_jwt_secret = "dev-only-jwt-secret-change-me"
+
+# DCS Redis 规格（单机 0.125GB 最低档）
+dcs_flavor = "redis.single.xu1.tiny.128"
+
+# 短信签名（MSGSMS，可选；未配置则验证码仅在函数日志显示）
+sms_signer = ""
+
+# APIG 实例规格（BASIC / STANDARD 等）
+apig_instance_edition = "BASIC"
+
+# 事件通知目标（EG 订阅 + SMN，需 EG 委托）
+events_enabled = true
+
+# IoTDA 设备接入（需账号已订阅 IoTDA；未订阅时置 false 跳过）
+iotda_enabled = true

@@ -1,0 +1,24 @@
+# Terraform
+infra/.terraform/
+infra/*.tfstate*
+infra/*.tfstate.*.backup
+infra/terraform.tfvars
+
+# 本地构建产物（函数代码包）
+build/
+src/functions/package-deps/node_modules/
+src/functions/package-deps/deps.zip
+
+# Node 依赖
+node_modules/
+
+# 过程产物（内部使用，不随实践对外发布）
+others/
+
+# 本地密钥与运行期生成文件
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.kubeconfig
